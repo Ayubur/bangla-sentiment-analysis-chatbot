@@ -19,9 +19,7 @@ stemmer = RafiStemmer()
 bangla_stopwords = pd.read_csv("stopwords-bn.txt",header=None)
 
 def text_process(text):
-
     emoticons = [':)',':D',':(',':(',':P','O:)','3:)','o.O',';)',':O','-_-','^_^','8-)','8|','>:(',':v',':/',':3','<3','(y)','>:O',':*']
-    
     mess=''
     for i in text.split():
         s, n, p, pa, q, f = urlparse(i)
@@ -33,7 +31,7 @@ def text_process(text):
             pass
         else:
             mess = mess.strip() + ' ' + i
-			
+            
     mess= mess.strip()  
     word_list  = mess.split(" ")
     for n,word in enumerate(word_list):
@@ -49,8 +47,8 @@ def text_process(text):
 
 @app.route('/api/predict',methods=['POST'])
 def predict():
-	NB_spam_model = open('bangla_nlp_model.pkl','rb')
-	pipeline = joblib.load(NB_spam_model)
+	bangla_nlp_model = open('bangla_nlp_model.pkl','rb')
+	pipeline = joblib.load(bangla_nlp_model)
 
 	if request.method == 'POST':
 		message= request.json.get('text')
