@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Message from "./Message";
 import PredictServices from '../services/PredictionServices'
-import axios from 'axios/index'
 
 class Chatbot extends Component {
   messagesEnd;
@@ -60,7 +59,7 @@ class Chatbot extends Component {
       speak: "bot",
       msg: {
         text: {
-          text: "Hello Welcome, Please type your text"
+          text: "Hello Welcome, Please type your bangla text"
         }
       }
     };

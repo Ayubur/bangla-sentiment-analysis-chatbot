@@ -4,4 +4,3 @@ joblib==0.13.2
 Flask==1.1.1
 scikit_learn==0.22.1
 nltk==3.4.5
-joblib==0.13.2
