@@ -1,21 +1,13 @@
-import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Chatbot from "./chatbot/Chatbot";
-import Header from "./Header";
+import logo from './logo.svg';
+import Chatbody from './components/chatbody/chatbody';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <div>
-          <Header />
-          <Route exact path="/" component={Landing} />
-          <Chatbot />
-        </div>
-      </BrowserRouter>
+    <div className="__main">
+        <Chatbody />
     </div>
   );
-};
+}
 
 export default App;
