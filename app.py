@@ -8,9 +8,6 @@ from bengali_stemmer.rafikamal2014 import RafiStemmer
 from urllib.parse import urlparse
 import string
 import joblib
-
-
-
 app = Flask(__name__)
 CORS(app)
 
